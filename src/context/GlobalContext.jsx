@@ -3,14 +3,19 @@ import axios from "axios";
 
 const GlobalContext = createContext()
 
+
 const GlobalProvider = ({children}) => {
   const [films, setFilms] = useState([]); 
   const [searchFilm, setSearchFilm] = useState('')
 
   console.log(searchFilm)
   const fetchData = () => {
+    /* troviamo serie tv e film  */
+    const baseUrl = `https://api.themoviedb.org/3/search/multi?api_key=91a4c60ba1089ba996b2c1f041145ce1&query=${encodeURIComponent(searchFilm)}`
+    /* per trovare solo film */
     const apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=91a4c60ba1089ba996b2c1f041145ce1&query=${encodeURIComponent(searchFilm)}`
-    axios.get(apiUrl)
+    
+    axios.get(baseUrl)
     .then(res => 
      setFilms(res.data.results)
     )
