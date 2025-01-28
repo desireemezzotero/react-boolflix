@@ -10,10 +10,10 @@ function HeaderNav() {
 
   return (
    <header>
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg bg-dark">
       <div className="container-fluid">
-         <h1>BOOLFLIX</h1>
-    
+         <h1>NETFLIX</h1>
+
          <form className="d-flex" role="search">
             <input 
               className="form-control me-2" 
