@@ -8,6 +8,19 @@ function Main() {
     fetchData()
   },[])
 
+  const getStars = (vote_average) => {
+    const stars = Math.round(vote_average / 2)
+    let star = []
+    for (let i = 0; i < 5; i++ ){
+      if (i < stars) {
+        star.push (<i class="fa-solid fa-star" key={(i)}></i>);  
+      } else {
+        star.push (<i class="fa-regular fa-star" key={(i)}></i>);
+      }
+    } 
+    return star
+  }
+
   return (
   <ul className="list-group">
       {films.map(film => 
@@ -19,8 +32,10 @@ function Main() {
           film.original_language === 'it' ? 
           (<img src="https://flagcdn.com/w320/it.png" alt="Italy Flag" title="Italy Flag" style={{ width: '30px', height: '20px' }} />) : (film.original_language)}
 
-          <p>{film.vote_average}</p>
+          <p>{getStars(film.vote_average)}</p>
           <p>{film.media_type}</p>
+
+          <img src={`https://image.tmdb.org/t/p/w342${film.poster_path}`} alt="" />
         </li>)}
     </ul>
   )
