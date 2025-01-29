@@ -8,11 +8,21 @@ const GlobalProvider = ({children}) => {
   const [films, setFilms] = useState([]); 
   const [searchFilm, setSearchFilm] = useState('')
   const [selectedGenere, setSelectedGenere] = useState('null')
+  const [filtredFilm, setFilteredFilms] = useState([]) 
   
-  console.log(searchFilm)
+  
+  /* homepage */
+  const apiHomeUrl = 'https://api.themoviedb.org/3/search/multi?api_key=91a4c60ba1089ba996b2c1f041145ce1&query=all'
 
+  const fetchHome = () => {
+    axios.get(apiHomeUrl)
+    .then(res=> 
+      setFilteredFilms(res.data.results)
+    )
+  }
+
+/* chiamata per serie tv e film */
   const fetchData = () => {
-    /* troviamo serie tv e film  */
     const baseUrl = `https://api.themoviedb.org/3/search/multi?api_key=91a4c60ba1089ba996b2c1f041145ce1&query=${encodeURIComponent(searchFilm)}`
     
     axios.get(baseUrl)
@@ -20,7 +30,7 @@ const GlobalProvider = ({children}) => {
       setFilms(res.data.results)  
     )
   }
-  
+  /* chiamata per il genere */
   const fetchSelectedGenere = (id) => {
     const genereURL = `https://api.themoviedb.org/3/genre/movie/list?api_key=91a4c60ba1089ba996b2c1f041145ce1&with_genres=${id}`
    
@@ -30,14 +40,19 @@ const GlobalProvider = ({children}) => {
     })
   }
 
+
   const value = {
     fetchData,
+    setFilms,
     films, 
     searchFilm, 
     setSearchFilm,
     fetchSelectedGenere,
     setSelectedGenere,
-    selectedGenere
+    selectedGenere,
+    fetchHome,
+    filtredFilm, 
+    setFilteredFilms
   }
 
   return (

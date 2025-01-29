@@ -7,9 +7,9 @@ function Card(props) {
     let star = []
     for (let i = 0; i < 5; i++ ){
       if (i < stars) {
-        star.push (<i class="fa-solid fa-star" key={(i)}></i>);  
+        star.push (<i className="fa-solid fa-star" key={(i)}></i>);  
       } else {
-        star.push (<i class="fa-regular fa-star" key={(i)}></i>);
+        star.push (<i className="fa-regular fa-star" key={(i)}></i>);
       }
     } 
     return star

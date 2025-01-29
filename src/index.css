@@ -54,10 +54,23 @@ header {
 
 .container-main {
   background-color: rgba(0, 0, 0, 0.503);
-  height: 100vh;
   color: white;
+}
 
-  .container {
-    height: 100vh;
-  }
+.swiper {
+  width: 60vh;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  height: 100vh;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+}
+
+.swiper-slide img {
+  display: block;
+  width: auto;
 }

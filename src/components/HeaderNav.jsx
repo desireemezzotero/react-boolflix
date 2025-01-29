@@ -1,20 +1,20 @@
+import { useState } from "react"
 import { useGlobalContext } from "../context/GlobalContext";
 import generiFilm from "../data/generi"
 
 function HeaderNav() {
 
-  const {searchFilm,setSearchFilm, fetchData,fetchSelectedGenere, films} = useGlobalContext()
-
-  const handlerSearch = (e) => {
-    e.preventDefault()
+  const {searchFilm,setSearchFilm, fetchData, filtredFilm, setFilteredFilms} = useGlobalContext()
+  
+  const handlerSearch = () => { 
     fetchData()
   }
   
   const handlerSearchGenere = (id) => {
-    console.log(id)
-    const filmMapGeneri= films.filter(film => console.log(film.genre_ids))
-     console.log(filmMapGeneri) 
-     console.log(films)
+    const filmMapGeneri= filtredFilm.filter(film => film.genre_ids?.includes(id)) 
+    filmMapGeneri.length > 0 ? setFilteredFilms(filmMapGeneri) : (<h5>NON CI SONO RISULTATI PER QUESTA CATEGORIA</h5>)
+
+    console.log(id,filmMapGeneri) 
   }
 
   return (
