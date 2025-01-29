@@ -10,7 +10,7 @@ function CardWrapper() {
   return (
     <>
     {movie.length > 0 && (
-      <div className="container text-center mt-5">
+      <div className="container mt-5">
          <h4>Film</h4>
        <div className="row">
           {movie.map(film => 
@@ -23,7 +23,7 @@ function CardWrapper() {
     )}
 
    {tv.length > 0 && (
-    <div className="container text-center mt-5">
+    <div className="container  mt-5">
        <h4>Serie TV</h4>
      <div className="row">
          {tv.map(film => 
