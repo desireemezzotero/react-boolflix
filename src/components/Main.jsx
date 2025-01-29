@@ -1,6 +1,6 @@
 import { useGlobalContext } from "../context/GlobalContext"
 import { useEffect } from "react"
-import Card from "./Card"
+import CardWrapper from "./CardWrapper"
 
 function Main() {
   const {fetchData} = useGlobalContext()
@@ -11,11 +11,7 @@ function Main() {
 
   return (
     <>
-    <div className="container">
-      <div className="row">
-        <Card/>
-      </div>{/* row */}
-    </div>{/* div del container */}
+    <CardWrapper/>
   </>
   )
 }

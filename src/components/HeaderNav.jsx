@@ -14,7 +14,7 @@ function HeaderNav() {
       <div className="container-fluid">
          <h1>NETFLIX</h1>
 
-         <form className="d-flex" role="search">
+         <form className="d-flex" role="search"> 
             <input 
               className="form-control me-2" 
               type="search" 
@@ -26,7 +26,7 @@ function HeaderNav() {
               className="btn btn-outline-success" 
               type="submit"
               onClick={handlerSearch}>Cerca</button>
-          </form>
+          </form> 
         </div>
     </nav>
   </header>
