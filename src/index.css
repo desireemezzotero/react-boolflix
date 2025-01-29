@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+/* header */
 header {
   background-color: black;
 
@@ -15,6 +16,12 @@ header {
   }
 }
 
+.dropdown-menu {
+  overflow-y: auto;
+  height: 300px;
+}
+
+/* main */
 .card {
   position: relative;
 }
@@ -43,4 +50,14 @@ header {
 .card:hover .card-hover {
   opacity: 1;
   visibility: visible;
+}
+
+.container-main {
+  background-color: rgba(0, 0, 0, 0.503);
+  height: 100vh;
+  color: white;
+
+  .container {
+    height: 100vh;
+  }
 }

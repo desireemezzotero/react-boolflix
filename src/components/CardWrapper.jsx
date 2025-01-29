@@ -28,7 +28,9 @@ function CardWrapper() {
      <div className="row">
          {tv.map(film => 
            <Card
-           film = {film}/>
+           film = {film}
+           key= {film.id}
+           />
           )} 
        </div>
     </div>
